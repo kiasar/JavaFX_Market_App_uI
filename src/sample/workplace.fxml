@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="753.0" prefWidth="1201.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <left>
+        <TabPane prefHeight="2000000.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="New Item">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#doButtItem" prefWidth="9999.0" text="New Item" />
+                        <Label text="Name:" />
+                        <TextField fx:id="textNameItem" promptText="Item name" />
+                        <Label text="Price ($):" />
+                        <Spinner fx:id="spinItem" prefHeight="31.0" prefWidth="99999.0" />
+                        <Label text="group:" />
+                        <TextField fx:id="textGroupItem" promptText="Item group" />
+                        <Label text="salesman:" />
+                        <ChoiceBox fx:id="choiceSalesmanItem" prefWidth="9999.0" />
+                        <Label text="Image:" />
+                        <Button fx:id="imagePicker" mnemonicParsing="false" onAction="#imageChooser" prefWidth="999999.0" style="-fx-border-color: #083761;" text="Choose the file" textFill="#083761" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </content>
+                </Tab>
+                <Tab text="New Off">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Start Date:" />
+                        <DatePicker fx:id="dateStartOff" prefWidth="99999.0" promptText="select start date" />
+                        <Label layoutX="10.0" layoutY="10.0" text="End Date:" />
+                        <DatePicker fx:id="dateEndOff" layoutX="10.0" layoutY="31.0" prefWidth="99999.0" promptText="select end date" />
+                        <Label text="Start Score:" />
+                        <Spinner fx:id="spinStartOff" prefHeight="31.0" prefWidth="99999.0" />
+                        <Label layoutX="20.0" layoutY="119.0" text="End Score:" />
+                        <Spinner fx:id="spinEndOff" layoutX="20.0" layoutY="140.0" prefHeight="31.0" prefWidth="99999.0" />
+                        <Label text="Item ID:" />
+                        <ChoiceBox fx:id="choiceItemOff" prefWidth="99999.0" />
+                        <GridPane alignment="CENTER" prefHeight="106.0" prefWidth="380.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="215.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="52.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="213.0" minWidth="10.0" prefWidth="213.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <VBox prefHeight="9999.0" prefWidth="100.0">
+                                 <children>
+                                    <Label text="Amount Off:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Spinner fx:id="spinAmountOff" prefHeight="31.0" prefWidth="99999.0" />
+                                    <Button maxWidth="999.0" mnemonicParsing="false" onAction="#doAmountOff" text="Make Amount off" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="9999.0" prefWidth="100.0" GridPane.columnIndex="2">
+                                 <children>
+                                    <Label text="Percent Off:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Spinner fx:id="spinPercentOff" prefHeight="31.0" prefWidth="99999.0" />
+                                    <Button maxWidth="9999.0" mnemonicParsing="false" onAction="#doPercentOff" text="Make Percent off" />
+                                 </children>
+                              </VBox>
+                              <Separator orientation="VERTICAL" prefHeight="106.0" prefWidth="9999.0" GridPane.columnIndex="1" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </GridPane>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </left>
+    <right>
+        <TabPane prefHeight="2000000.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="Reports">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#doReports" prefWidth="9999.0" text="Show the report" />
+                        <Label text="Start Date:" />
+                        <DatePicker fx:id="dateStartChart" prefWidth="99999.0" promptText="select start date" />
+                        <Label text="End Date:" />
+                        <DatePicker fx:id="dateEndChart" prefWidth="99999.0" promptText="select end date" />
+                        <Label text="Type:" />
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Debt" GridPane.rowIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="radioReport" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Holdings" toggleGroup="$radioReport" />
+                              <RadioButton fx:id="radioCostAndBenefit" mnemonicParsing="false" text="Cost and benefit" toggleGroup="$radioReport" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <RadioButton mnemonicParsing="false" text="Customers" toggleGroup="$radioReport" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                        <Label text="Report:" />
+                        <TableView fx:id="tableCharts" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </content>
+                </Tab>
+                <Tab fx:id="tabManager" text="Manager">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Create Customer:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Name:" />
+                        <TextField fx:id="textNameCustomer" promptText="name" />
+                        <Label text="Lastname:" />
+                        <TextField fx:id="textLastNameICustomer" promptText="last name" />
+                        <Label text="Email:" />
+                        <TextField fx:id="textEmailCustomer" promptText="email" />
+                        <Label text="Phone number:" />
+                        <TextField fx:id="textPhoneCustomer" promptText="phone number" />
+                        <Button mnemonicParsing="false" onAction="#doCreateCustomer" prefWidth="9999.0" text="create customer" />
+                        <Separator prefHeight="49.0" prefWidth="480.0" />
+                        <Label text="Create Salesman:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="41.0" text="Name:" />
+                        <TextField fx:id="textNameSalesman" layoutX="20.0" layoutY="62.0" promptText="name" />
+                        <Label layoutX="20.0" layoutY="93.0" text="Official name:" />
+                        <TextField fx:id="textOfficialNameSalesman" layoutX="20.0" layoutY="114.0" promptText="last name" />
+                        <Label layoutX="20.0" layoutY="145.0" text="Email:" />
+                        <TextField fx:id="textEmailSalesman" layoutX="20.0" layoutY="166.0" promptText="email" />
+                        <Label layoutX="20.0" layoutY="197.0" text="Phone number:" />
+                        <TextField fx:id="textPhoneSalesman" layoutX="20.0" layoutY="218.0" promptText="phone number" />
+                        <Button layoutX="20.0" layoutY="249.0" mnemonicParsing="false" onAction="#doCreateSalesman" prefWidth="9999.0" text="create salesman" />
+                        <Separator prefHeight="49.0" prefWidth="480.0" />
+                        <Label layoutX="20.0" layoutY="329.0" text="Create Cashier:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="350.0" text="Name:" />
+                        <TextField fx:id="textNameCashier" layoutX="20.0" layoutY="371.0" promptText="name" />
+                        <Label layoutX="20.0" layoutY="454.0" text="Username" />
+                        <TextField fx:id="textUserNameCashier" layoutX="20.0" layoutY="475.0" promptText="username" />
+                        <Label layoutX="20.0" layoutY="506.0" text="Password:" />
+                        <TextField fx:id="textPssCashier" layoutX="20.0" layoutY="527.0" promptText="password" />
+                        <Button layoutX="20.0" layoutY="558.0" mnemonicParsing="false" onAction="#doCreateCashier" prefWidth="9999.0" text="create cashier" />
+                        <Separator layoutX="20.0" layoutY="589.0" prefHeight="49.0" prefWidth="480.0" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </padding></VBox>
+               </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </right>
+    <center>
+        <BorderPane prefHeight="99999.0" prefWidth="99999.0" BorderPane.alignment="CENTER">
+            <left>
+                <Separator orientation="VERTICAL" prefHeight="99999.0" BorderPane.alignment="CENTER" />
+            </left>
+            <right>
+                <Separator orientation="VERTICAL" prefHeight="99999.0" BorderPane.alignment="CENTER" />
+            </right>
+            <top>
+                <HBox fx:id="hBoxGoods" alignment="BASELINE_LEFT" opacity="0.9" prefHeight="40.0" prefWidth="200.0" style="-fx-border-color: #8cb7e6;" BorderPane.alignment="CENTER_RIGHT">
+                    <children>
+                        <Label text=" Good Adder:  " textAlignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="17.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="buttGoods" mnemonicParsing="false" onAction="#doButtGoods" text="Add" />
+                        <Label text="goods ID:" />
+                        <ChoiceBox fx:id="choiceGoods" prefHeight="31.0" prefWidth="90.0" />
+                        <Label text="quantity:" />
+                        <Spinner fx:id="spinnerGoods" prefHeight="31.0" prefWidth="100.0" />
+                        <Button fx:id="buttClearGoods" mnemonicParsing="false" onAction="#doClearButtGoods" text="clear" textFill="RED" />
+                    </children>
+                </HBox>
+            </top>
+            <center>
+                <ScrollPane fx:id="scrollGoods" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+                    <content>
+                        <VBox fx:id="vBoxGoods" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="400" />
+                    </content>
+                </ScrollPane>
+            </center>
+            <bottom>
+            <GridPane prefHeight="203.0" prefWidth="170.0" style="-fx-border-color: #8cb7e6;" BorderPane.alignment="CENTER_RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="94.0" minHeight="2.0" prefHeight="66.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                      <HBox fx:id="hBoxSell" alignment="BASELINE_LEFT" opacity="0.9" prefHeight="116.0" prefWidth="220.0">
+                          <children>
+                              <Label text=" Sell or Buy:  " textAlignment="CENTER">
+                                  <font>
+                                      <Font name="System Bold" size="17.0" />
+                                  </font>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#doButtSell" text="Trade" />
+                              <Label text="type: " />
+                              <RadioButton mnemonicParsing="false" onAction="#radioSell" selected="true" text="sell">
+                                  <toggleGroup>
+                                      <ToggleGroup fx:id="radioSell" />
+                                  </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" onAction="#radioBuy" text="buy" toggleGroup="$radioSell" />
+                        <Label text="Person ID:" />
+                        <ChoiceBox fx:id="choiceSell" prefHeight="31.0" prefWidth="87.0" />
+                        <Label text="Paid money ($):" />
+                        <Spinner fx:id="spinSell" prefHeight="31.0" prefWidth="103.0" />
+                          </children>
+                      </HBox>
+                  <HBox fx:id="hBoxSettle" alignment="BASELINE_LEFT" opacity="0.7" prefHeight="296.0" prefWidth="170.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label text="Settle Factor:" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#doButtSettle" text="settle" />
+                        <Label text="Factor ID:" />
+                        <ChoiceBox fx:id="choiceSettle" prefHeight="31.0" prefWidth="130.0" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <Separator prefWidth="999999.0" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            </bottom>
+        </BorderPane>
+    </center>
+</BorderPane>
