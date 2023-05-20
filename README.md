@@ -2,7 +2,7 @@
 
 ### Overview
 This is a Inventory Management Application developed using Java and JavaFX. The application is designed to streamline the process of managing inventory for small to medium-sized businesses, providing features for defining new items and customers. It includes distinct roles for managers and cashiers, thus ensuring organized operations. Additionally, it offers reporting capabilities that help monitor business activities effectively.
-[![N|Solid](image_2023-05-20_193211015.png)]
+![N|Solid](image_2023-05-20_193211015.png)
 
 
 ### Features
